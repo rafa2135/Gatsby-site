@@ -1,9 +1,11 @@
 import * as React from "react";
+import Navbar from "../components/Navbar";
 import { PageProps, Link } from "gatsby";
 
 const Index = ({}: PageProps) => (
   <main>
     <div>
+      <Navbar />
       <h1>Index</h1>
       <div>
         <Link to="/about">about</Link>
@@ -13,7 +15,6 @@ const Index = ({}: PageProps) => (
       </div>
     </div>
     <a href="/about">regular link</a>
-    <a href="https://www.gatsbyjs.com/docs/quick-start/">gatsby doc</a>
   </main>
 );
 export default Index;
