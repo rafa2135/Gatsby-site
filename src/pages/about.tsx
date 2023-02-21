@@ -1,13 +1,12 @@
 import * as React from "react";
 import { PageProps } from "gatsby";
-import Navbar from "../components/Navbar";
+import Layout from "../components/Layout";
 
 const About = ({}: PageProps) => (
-  <main>
+  <Layout>
     <div>
-      <Navbar />
       <h1>About</h1>
     </div>
-  </main>
+  </Layout>
 );
 export default About;
