@@ -1,14 +1,17 @@
 import * as React from "react";
-import { Link, HeadFC, PageProps } from "gatsby";
 
-const NotFoundPage: React.FC<PageProps> = () => {
+import Layout from "../components/Layout";
+const NotFoundPage = () => {
   return (
-    <main>
-      <h1>Page not found</h1>
-    </main>
+    <Layout>
+      <main className="error-page">
+        <section>
+          <h1>404</h1>
+          <h3>page not found</h3>
+        </section>
+      </main>
+    </Layout>
   );
 };
 
 export default NotFoundPage;
-
-export const Head: HeadFC = () => <title>Not found</title>;
