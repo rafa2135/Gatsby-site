@@ -2,9 +2,9 @@ import * as React from "react";
 import { PageProps } from "gatsby";
 import Layout from "../components/Layout";
 
-const About = ({}: PageProps) => (
+const Tags = ({}: PageProps) => (
   <Layout>
-    <h1>About page</h1>
+    <h1>tags page</h1>
   </Layout>
 );
-export default About;
+export default Tags;
