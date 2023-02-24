@@ -1,7 +1,9 @@
 import * as React from "react";
-import { PageProps, Link } from "gatsby";
+import { PageProps } from "gatsby";
 import Layout from "../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
+import Fetchdata from "../examples/fetchData";
+
 StaticImage;
 const Index = ({}: PageProps<{}>) => (
   <Layout>
@@ -11,7 +13,7 @@ const Index = ({}: PageProps<{}>) => (
           src="../assets/images/main.jpeg"
           alt="eggs"
           className="hero-img"
-          placeholder="tracedSVG"
+          placeholder="blurred"
           layout="fullWidth"
         ></StaticImage>
         <div className="hero-container">
@@ -21,6 +23,7 @@ const Index = ({}: PageProps<{}>) => (
           </div>
         </div>
       </header>
+      <Fetchdata />
     </main>
   </Layout>
 );
