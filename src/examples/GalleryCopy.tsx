@@ -1,6 +1,5 @@
-import { log } from "console";
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
 
@@ -23,15 +22,15 @@ const query = graphql`
     }
   }
 `;
-const Gallery = (props: Props) => {
-  const data = useStaticQuery(query);
+const GalleryCopy = (props: Props) => {
+  const data = useStaticQuery<ImageQueryData>(query);
   const nodes = data.allFile.nodes;
   return (
     <div>
       <Wrapper>
-        {nodes.map((image: any, index: number) => {
-          const { name }: any = image;
-          const imagePath = getImage(image);
+        {nodes.map((image: nodes, index: number) => {
+          const { name, childImageSharp } = image;
+          const imagePath = getImage(childImageSharp);
 
           return (
             <article key={index} className="item">
@@ -60,4 +59,17 @@ const Wrapper = styled.section`
     border-radius: 1rem;
   }
 `;
-export default Gallery;
+
+interface ImageQueryData {
+  allFile: {
+    nodes: nodes[];
+  };
+}
+interface nodes {
+  name: string;
+  childImageSharp: {
+    gatsbyImageData: IGatsbyImageData;
+  };
+}
+
+export default GalleryCopy;
