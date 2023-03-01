@@ -1,12 +1,12 @@
 import React from "react";
-import Recipes from "../interfaces/RecipesList";
+import Recipes from "../interfaces/Recipes";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 type Props = {
   recipes: Recipes[];
 };
-const RecipesList = ({ recipes }: Props) => {
+const RecipesList = ({ recipes = [] }: Props) => {
   const recipe = recipes;
   return (
     <div className="recipes-list">

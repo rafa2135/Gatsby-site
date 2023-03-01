@@ -1,9 +1,21 @@
 import React from "react";
 import Layout from "../components/Layout";
-
+import { Link, graphql } from "gatsby";
+import RecipesList from "../components/RecipesList";
+import recipes from "../interfaces/Recipes";
 type Props = {};
 
-function Contact({}: Props) {
+function Contact({
+  data: {
+    allContentfulRecipe: { nodes: recipes },
+  },
+}: {
+  data: {
+    allContentfulRecipe: {
+      nodes: Array<recipes>;
+    };
+  };
+}) {
   return (
     <Layout>
       <main className="page">
@@ -40,9 +52,30 @@ function Contact({}: Props) {
             </form>
           </article>
         </section>
+        <section className="featured-recipes">
+          <h5> look at this Awesomesouce!</h5>
+          <RecipesList recipes={recipes}></RecipesList>
+        </section>
       </main>
     </Layout>
   );
 }
-
+export const query = graphql`
+  query {
+    allContentfulRecipe(
+      sort: { title: ASC }
+      filter: { featured: { eq: true } }
+    ) {
+      nodes {
+        id
+        title
+        cookTime
+        prepTime
+        image {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`;
 export default Contact;

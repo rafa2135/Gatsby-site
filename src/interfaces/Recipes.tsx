@@ -1,13 +1,14 @@
 import { IGatsbyImageData } from "gatsby-plugin-image";
-
-interface RecipesList {
+interface Recipes {
   title: string;
-  id: any;
+  id: string;
   prepTime: number;
   cookTime: number;
   image: {
     gatsbyImageData: IGatsbyImageData;
   };
+  content: {
+    tags: string[];
+  };
 }
-
-export default RecipesList;
+export default Recipes;
