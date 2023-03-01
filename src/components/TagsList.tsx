@@ -8,7 +8,6 @@ type Props = {
 
 const TagsList = ({ recipes }: Props) => {
   const newTags = setupTags(recipes);
-  console.log(newTags);
 
   return (
     <div className="tag-container">
