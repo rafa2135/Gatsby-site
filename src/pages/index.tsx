@@ -2,6 +2,7 @@ import * as React from "react";
 import { PageProps } from "gatsby";
 import Layout from "../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
+import AllRecipes from "../components/AllRecipes";
 
 StaticImage;
 const Index = ({}: PageProps<{}>) => (
@@ -22,6 +23,7 @@ const Index = ({}: PageProps<{}>) => (
           </div>
         </div>
       </header>
+      <AllRecipes />
     </main>
   </Layout>
 );

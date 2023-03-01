@@ -17,6 +17,7 @@ const config: GatsbyConfig = {
       { name: "mario", age: 30 },
       { name: "alex", age: 31 },
     ],
+    icon: `/src/assets/images/icon.svg`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -45,6 +46,19 @@ const config: GatsbyConfig = {
         accessToken: process.env.CONTENTFUL_API_KEY,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/assets/images/icon.png`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };
 

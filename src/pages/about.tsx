@@ -6,6 +6,7 @@ import { Link } from "gatsby";
 const About = ({}: PageProps) => (
   <Layout>
     <main className="page">
+      <header></header>
       <section className="about-page">
         <article>
           <h2></h2>
