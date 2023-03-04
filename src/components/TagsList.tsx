@@ -2,6 +2,7 @@ import React from "react";
 import Recipes from "../interfaces/Recipes";
 import { Link } from "gatsby";
 import setupTags from "../utils/setupTags";
+import slugify from "slugify";
 type Props = {
   recipes: Recipes[];
 };
@@ -15,8 +16,9 @@ const TagsList = ({ recipes }: Props) => {
       <div className="tags-list">
         {newTags.map((tag, key) => {
           const [text, value] = tag;
+          const slug = slugify(text, { lower: true });
           return (
-            <Link key={key} to={`/${text}`} className="">
+            <Link key={key} to={`/tags/${slug}`} className="">
               {text}({value})
             </Link>
           );

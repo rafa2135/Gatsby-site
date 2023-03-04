@@ -1,6 +1,6 @@
 import { resolve } from "path";
 import { GatsbyNode } from "gatsby";
-
+import slugify from "slugify";
 export const createPages: GatsbyNode["createPages"] = async ({
   actions,
   graphql,
@@ -26,8 +26,9 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   recipes.data?.allContentfulRecipe.nodes.forEach((recipe) => {
     recipe.content.tags?.forEach((tag) => {
+      const tagSlug = slugify(tag, { lower: true });
       createPage({
-        path: `/${tag}`,
+        path: `/tags/${tagSlug}`,
         component: resolve(__dirname, "src/templates/tag-template.tsx"),
         context: {
           tag,
