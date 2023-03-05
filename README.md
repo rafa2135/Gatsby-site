@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby Minimal TypeScript Starter
+  Gatsby Rafael TypeScript
 </h1>
 
 https://gatsbyjs-rafael.netlify.app/
