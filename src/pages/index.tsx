@@ -3,8 +3,8 @@ import { PageProps } from "gatsby";
 import Layout from "../components/Layout";
 import { StaticImage } from "gatsby-plugin-image";
 import AllRecipes from "../components/AllRecipes";
+import { SEO } from "../components/SEO";
 
-StaticImage;
 const Index = ({}: PageProps<{}>) => (
   <Layout>
     <main className="page">
@@ -27,4 +27,8 @@ const Index = ({}: PageProps<{}>) => (
     </main>
   </Layout>
 );
+
 export default Index;
+export const Head = () => {
+  return <SEO title="home" description="static"></SEO>;
+};

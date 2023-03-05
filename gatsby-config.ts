@@ -17,7 +17,6 @@ const config: GatsbyConfig = {
       { name: "mario", age: 30 },
       { name: "alex", age: 31 },
     ],
-    icon: `/src/assets/images/icon.svg`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin

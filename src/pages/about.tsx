@@ -4,7 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import RecipesList from "../components/RecipesList";
 import recipes from "../interfaces/Recipes";
-
+import { SEO } from "../components/SEO";
 type Props = {};
 const About = ({
   data: {
@@ -50,6 +50,9 @@ const About = ({
       </main>
     </Layout>
   );
+};
+export const Head = () => {
+  return <SEO title="About" />;
 };
 export const query = graphql`
   query {

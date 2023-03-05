@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { graphql } from "gatsby";
 import RecipesList from "../components/RecipesList";
 import recipes from "../interfaces/Recipes";
+import { SEO } from "../components/SEO";
 type Props = {};
 
 function Contact({
@@ -64,6 +65,9 @@ function Contact({
     </Layout>
   );
 }
+export const Head = () => {
+  return <SEO title="Contact" />;
+};
 export const query = graphql`
   query {
     allContentfulRecipe(

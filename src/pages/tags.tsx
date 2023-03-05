@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import setupTags from "../utils/setupTags";
 import slugify from "slugify";
+import { SEO } from "../components/SEO";
 
 const Tags = ({ data }: any) => {
   const newTags = setupTags(data.allContentfulRecipe.nodes);
@@ -25,6 +26,9 @@ const Tags = ({ data }: any) => {
       </main>
     </Layout>
   );
+};
+export const Head = () => {
+  return <SEO title="Tags" />;
 };
 export const query = graphql`
   query {
